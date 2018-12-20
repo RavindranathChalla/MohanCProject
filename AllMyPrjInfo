@@ -1,0 +1,102 @@
+
+# APIm Onboarding
+
+This project creates a provider Org for the user and goes thru several steps like Create API, Create Product, Add API to Product, Stage API, Publish API, Create Consumer Org and Create Application and subscription of product is done externally.
+It also includes Listing of ApI based on provider org, Listing of Swagger based ApI based on provider org, editing of APIs and Creating of Inbox of APIs. All the  UI data is saved in the database.    
+
+Platform APIs are Rest APIs which are using for various purposes. Users can login to APIM portal and do the activities, same activities can achieve by using Platform APIs without login to APIM portal.
+User has to minimal information as input to the platform api. Customers can customize the UI portals with their own format and call this platform APIs from their own custom portals. Going forward, no need to login either API Manager or ADP sites to achieve the below operations.
+Based on the functionality, APIs have been created .  Users can segregate the APIs and Create Separate Products based on functionality as well as Roles and give the permissions to the appropriate users to call these apis.
+
+
+
+
+
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project locally.
+
+### Prerequisites
+
+Requires mavensetup, install and setup NodeJS.
+
+### Installing locally
+
+A step by step series of examples that tell you have to get a development env running:
+
+1.	Checkout project's dev branch and execute <code>mvn package</code>
+
+2.	Run **ApimOnboardingApplication.java** which will start on port **42020**.
+
+3.	To test the server starts up correct, you can open UI at
+	>http://localhost:42020/apim-onboarding/
+
+
+## Developing and Building of Application
+
+## UI Build
+npm config set proxy http://webproxy.ssmb.com:8080
+npm config set https-proxy http://webproxy.ssmb.com:8080
+npm install
+npm start
+npm run build
+
+## Java Build
+* Run \com\citi\cpt\apim\onboarding\ApimOnboardingApplication.java to start Spring Boot application.
+* application.yml file carries environment specific properties.
+* Few urls:
+http://localhost:42020/apim-onboarding/
+http://localhost:42020/apim-onboarding/onboarding
+http://localhost:42020/apim-onboarding/onboarding/application
+http://localhost:42020/apim-onboarding/onboarding/api
+http://localhost:42020/apim-onboarding/onboarding/confirm
+
+## Local Project Setup and deploy Instructions
+
+ -Check out the apim-onboarding application from the Bitbucket URL.
+ 
+ -Import the project in the Eclipse IDE from the local GIT Location of project.
+ 
+ -Do Clean and build the project.
+ 
+ -Install NodeJS in local system and setup the Classpath.
+ 
+-Run the npm install from the project source location.
+
+-Run the npm build and it generates the script files and 
+creates new build folder under below project directory : 
+\apim-onboarding\build
+
+-Copy all files from build folder to the src/main/resources/public folder(Create new public folder)
+ 
+-Do a Maven clean build of the project
+
+-Do a Maven Install to generate project Jar file : **apimonboarding-0.0.1-SNAPSHOT.jar** under a new target folder
+
+-Run \com\citi\cpt\apim\onboarding\ApimOnboardingApplication.java to start Spring Boot application
+
+-Run Local server URL : http://localhost:42020/apim-onboarding 
+
+
+## Dev server details
+
+DEV : sd-560e-f2bb
+
+Application 	Ports	
+apim-onboarding	42020	
+
+FID: apimfid
+   
+
+## Dev server deployment Instructions
+
+-Deploy jar **apimonboarding-0.0.1-SNAPSHOT.jar** to the  dev box server location : /opt/apimfid/apim-onboarding
+
+-Run start script from scripts folder from /opt/apimfid/apim-onboarding/scripts/ 
+
+-Generated Log files location : /opt/apimfid/logs-apim-onboarding
+
+-Run DEV server URL : http://sd-fd62-1fdf:42020/apim-onboarding/ 
+
+-Run DEV server QA city velocity URL : https://qa.citivelocity.com/cv2/go/ApimOnboarding
